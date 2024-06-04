@@ -6,10 +6,17 @@ on:
       - main
 
 jobs:
-  deployment:
+  deployment-staging:
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: deploy simulation staging
+        run: |
+          echo 'deployed successfully to staging'
+  deployment-prod:
     runs-on: ubuntu-latest
     environment: production
     steps:
-      - name: deploy simulation
+      - name: deploy simulation production
         run: |
-          echo 'deployed successfully'
+          echo 'deployed successfully to production'
